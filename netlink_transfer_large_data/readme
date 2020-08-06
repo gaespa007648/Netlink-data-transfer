@@ -1,0 +1,22 @@
+1. Compile user-space code
+cd netlink_transfer_large_data
+make
+
+2. Compile kernel-space code
+cd kernel
+make
+sudo insmod netlinkKernel.ko
+
+3. Run
+cd ..
+./netlinkUser
+
+4. Clean
+(1) If you want to remove kernel model
+sudo rmmod netlinkKernel
+(2) Clean the object file of userspace code
+cd netlink_transfer_large_data
+make clean
+(3) Clean all the kernel object file of kernelspace code
+cd kernel
+make clean
